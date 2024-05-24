@@ -1,6 +1,7 @@
 @import url('../../app/vars.css');
 
 .switch{
+    z-index: 20;
     position: absolute;
     right: 20px;
     bottom: 20px;

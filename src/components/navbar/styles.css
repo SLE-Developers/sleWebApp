@@ -8,6 +8,8 @@
     /* background: hsl(222deg, 84%, 33%); */
     gap: 40px;
     z-index: 10;
+    position: absolute;
+    width: 100vw;
 }
 
 .logo-compuesto {
@@ -41,7 +43,7 @@
 
 .contenedor-mobile {
     position: absolute;
-    background: var(--color-nav-links);
+    background: var(--color-primary);
     transition: all;
     transition-duration: .5s;
     height: 0;

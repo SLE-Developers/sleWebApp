@@ -38,7 +38,7 @@ export const NavSlider = () => {
               <div className="image-container group">
                 <h2>{project.name}</h2>
                 <div className="image-wrapper">
-                  <img src={project.img1} alt="Imagen de la página web" className={`${project.img2}`} />
+                  <img src={project.img1} alt="Imagen de la página web" className={`transform transition duration-500 hover:translate-y-[-500px]`} />
                 </div>
               </div>
             </div>

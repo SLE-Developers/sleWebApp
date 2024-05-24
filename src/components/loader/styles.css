@@ -1,0 +1,56 @@
+@import url('../../app/vars.css');
+
+.loader {
+    width: 100px;
+    height: 130px;
+    position: relative;
+    animation: expandRotate 3s linear infinite;
+    rotate: 90deg;
+}
+
+.panel {
+    position: absolute;
+}
+
+.panel-top {
+    top: 17px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.panel-bottom-left {
+    top: 60px;
+    left: 9%;
+}
+
+.panel-bottom-right {
+    top: 60px;
+    right: 9%;
+}
+
+.hexagon {
+    width: 30px;
+    height: 35px;
+    background: var(--color-primary);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: expandRotate 2s linear infinite reverse;
+}
+
+.hexagon:not(:first-child) {
+    margin-left: -15px;
+    /* Adjust spacing between hexagons */
+}
+
+@keyframes expandRotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.5);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}

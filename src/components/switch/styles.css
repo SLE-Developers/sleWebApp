@@ -1,0 +1,16 @@
+@import url('../../app/vars.css');
+
+.switch{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.switch button {
+    color: var(--color-nav-links);
+    /* background: var(--color-primary); */
+    padding: 16px;
+    font-size: 20px;
+    border-radius: 100%;
+    /* filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); */
+}

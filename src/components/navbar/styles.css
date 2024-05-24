@@ -1,0 +1,371 @@
+@import url('../../app/vars.css');
+
+.nav-bar {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    /* color: #fff; */
+    /* background: hsl(222deg, 84%, 33%); */
+    gap: 40px;
+    z-index: 10;
+}
+
+.logo-compuesto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    width: auto;
+}
+
+.custom-logo {
+    fill: var(--color-nav-links);
+    width: 50px;
+    margin-bottom: auto;
+}
+
+.letras {
+    fill: var(--color-nav-links);
+    width: 100px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.logo-compuesto svg path {
+    transition: all .5s ease;
+}
+
+.logo-compuesto:hover svg path {
+    fill: var(--color-hover-nav-link);
+}
+
+.contenedor-mobile {
+    position: absolute;
+    background: var(--color-nav-links);
+    transition: all;
+    transition-duration: .5s;
+    height: 0;
+    width: 0;
+    right: 0;
+    top: 0;
+    border-radius: 0 0 0 100%;
+}
+
+.active {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    border-radius: 0px;
+}
+
+.burguer-btn svg {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    color: var(--color-nav-links);
+    /* background: var(--color-nav-links); */
+    /* filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); */
+    padding: 10px;
+    font-size: 50px;
+    border-radius: 100%;
+    /*box-shadow: 0 5px 10px -2px var(--color-accent)*/
+}
+
+.active .burguer-btn svg {
+    color: #fff;
+}
+
+.mobile-links-container ul {
+    display: none;
+}
+
+.active .mobile-links-container ul {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    font-weight: bolder;
+    font-size: x-large;
+    color: white;
+}
+
+.active .mobile-links-container ul li {
+    position: relative;
+    width: 100%;
+}
+
+.active .mobile-links-container ul li a {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    /* Posición inicial visible */
+    opacity: 1;
+    /* Opacidad inicial */
+    transition: all 0.25s ease-in-out;
+    /* Transiciones separadas para transform y opacity */
+    animation: emerge 1.5s none;
+    /* Animación inicial */
+}
+
+@keyframes emerge {
+    from {
+        /* Estado inicial de la animación */
+        transform: translateX(-50%) translateY(200%);
+        /* Posición inicial abajo */
+        opacity: 0;
+        /* Opacidad inicial */
+    }
+
+    to {
+        /* Estado final de la animación */
+        transform: translateX(-50%) translateY(0);
+        /* Posición final */
+        opacity: 1;
+        /* Opacidad final */
+    }
+}
+
+.active .mobile-links-container ul li a:hover {
+    transform: translateX(-50%) translateY(-10%) scale(1.1);
+    /* Escalado al hacer hover */
+}
+
+.desktop-container {
+    display: none;
+    flex-grow: 1;
+    font-size: x-large;
+    position: relative;
+}
+
+.desktop-container, .unfolded {
+    opacity: 0;
+}
+
+.desktop-links-container ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.link {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+p {
+    color: var(--color-hover-nav-link);
+}
+
+.link p {
+    position: relative;
+    color: var(--color-nav-links);
+}
+
+.link-text::after {
+    transition: all .25s ease;
+    content: '';
+    position: absolute;
+    background: var(--color-nav-links);
+    height: 2.5px;
+    width: 100%;
+    bottom: -5px;
+    left: 0%;
+}
+
+.link:hover .link-text::after,
+.active-link .link-text::after {
+    width: 90%;
+    left: 5%;
+    background-color: var(--color-hover-nav-link);
+}
+
+.services:hover svg,
+.portfolio:hover svg,
+.information:hover svg,
+.active-link svg {
+    transform: rotate(90deg);
+    /* Cambia el valor de rotación según lo desees */
+    transition: transform 0.3s ease;
+    /* Agrega una transición suave */
+    color: var(--color-hover-nav-link) !important;
+}
+
+.services,
+.portfolio,
+.information {
+    padding: 7px;
+}
+
+.services svg,
+.portfolio svg,
+.information svg {
+    color: var(--color-nav-links);
+}
+
+.active-link p,
+.link:hover p {
+    color: var(--color-hover-nav-link);
+}
+
+.unfolded-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: -2;
+    transition: all .5s ease;
+    background: var(--color-desplegable);
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unfolded {
+    height: 75vh;
+    border-bottom: #fff 10px solid;
+}
+
+.folded-card {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transform: translateY(-50px) translate(-50%, -50%) scale(0);
+    /* Escala a cero para ocultar */
+    transition: opacity 0.5s ease, height 0.5s ease, transform 0.5s ease;
+    justify-content: center;
+    /* Centrar horizontalmente el contenido */
+    text-align: center;
+    /* Centrar horizontalmente el contenido */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.unfolded-card {
+    opacity: 1;
+    padding-top: 130px;
+    height: 100%;
+    /* o una altura fija, dependiendo de tus necesidades */
+    transform: translateY(0px) translate(-50%, -50%) scale(1);
+    /* Escala a su tamaño normal para mostrar */
+    transition: opacity 0.5s ease, height 0.5s ease, transform 0.5s ease;
+    justify-content: center;
+    /* Centrar horizontalmente el contenido */
+    text-align: center;
+    /* Centrar horizontalmente el contenido */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #000; */
+    color: var(--color-nav-links);
+}
+
+.nav-card-content {
+    display: flex;
+    height: 100%;
+    width: 80vw;
+    /* background: red; */
+    font-size: x-large;
+    justify-content: space-between;
+}
+
+.nav-card-content .cta {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-card-content .cta a {
+    font-weight: bold;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    transition: all .5s ease;
+}
+
+.nav-card-content .cta a:hover {
+    transform: scale(1.2);
+}
+
+.nav-card-content .principal {
+    /* flex-grow: 1; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-card-content .principal ol {
+    list-style: decimal;
+    text-align: start;
+}
+
+.nav-card-content .principal ol li::marker {
+    font-weight: bolder;
+}
+
+.nav-card-content .principal ol li {
+    padding-left: 5px;
+    margin-bottom: 10px;
+    transition: all .5s ease;
+    align-items: center;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    /* Esto empujará el icono hacia la derecha */
+}
+
+.nav-card-content .principal ol li svg {
+    transition: all .25s ease;
+    opacity: 0;
+}
+
+.nav-card-content .principal ol li:hover svg {
+    opacity: 1;
+}
+
+.nav-card-content .principal ol li button {
+    transition: all .5s ease;
+}
+
+.nav-card-content .principal ol li:hover button {
+    font-size: xx-large;
+    text-decoration: underline;
+}
+
+.nav-image {
+    border-radius: 50px;
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .contenedor-mobile {
+        display: none;
+    }
+
+    .desktop-container, .unfolded {
+        opacity: 1;
+    }
+
+    .nav-image {
+        display: block;
+    }
+
+    .desktop-container {
+        display: block;
+    }
+}

@@ -1,0 +1,22 @@
+/* variables.module.css */
+:root {
+    --color-background: hsl(225deg, 40%, 98%);
+    --color-nav-links: hsl(222deg, 98%, 42%);
+    --color-desplegable: hsl(213deg, 79%, 85%);
+    --color-content: hsl(225deg, 46%, 5%);
+    --color-primary: hsl(222deg, 98%, 42%);
+    --color-secondary: hsl(222deg, 85%, 67%);
+    --color-accent: hsl(213deg, 79%, 15%);
+    --color-hover-nav-link: hsl(222deg, 85%, 67%);
+}
+
+:root[data-theme="dark"] {
+    --color-background: hsl(225deg, 40%, 2%);
+    --color-nav-links: hsl(225deg, 46%, 95%);
+    --color-desplegable: hsl(213deg, 79%, 15%);
+    --color-content: hsl(225deg, 46%, 95%);
+    --color-primary: hsl(222deg, 98%, 58%);
+    --color-secondary: hsl(222deg, 84%, 33%);
+    --color-accent: hsl(213deg, 79%, 85%);
+    --color-hover-nav-link: hsl(213deg, 79%, 85%);
+}

@@ -1,0 +1,79 @@
+@import url('../../../app/vars.css');
+
+.slider-container {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 90px 30px 90px 30px;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    flex: 0 0 33.33%;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+    height: 100%;
+}
+
+.image-container {
+    background: #f3f3f3;
+    width: 100%;
+    /* ajusta el ancho según sea necesario */
+    height: 400px;
+    /* ajusta la altura según sea necesario */
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container h2 {
+    
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 2.5s ease;
+}
+
+/* .image-container:hover img {
+    transform: translateY(-400px);
+} */
+
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.prev-button {
+    left: 0px;
+    font-size: 40px;
+}
+
+.next-button {
+    right: 0px;
+    font-size: 40px;
+}

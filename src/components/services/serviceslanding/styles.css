@@ -1,1 +1,126 @@
 @import url('../../../app/vars.css');
+
+.services-container {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--color-content);
+    text-transform: capitalize;
+}
+
+.services-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.services-content h3 {
+    padding-left: 10px;
+    font-size: 40px;
+    font-weight: lighter;
+    font-family: "Raleway", sans-serif;
+    padding: 20px;
+}
+
+.services-content ul li h2 button {
+    text-transform: capitalize;
+    transition: all .5s ease;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    font-size: 77px;
+}
+
+.services-content ul li h2 button:hover {
+    font-size: 90px;
+}
+
+.icon-services {
+    width: 400px;
+    opacity: 1;
+    visibility: visible;
+    /* transition: opacity 0.5s ease, visibility 0.5s ease; */
+    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.icon-services.oculto {
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    right: 50%;
+}
+
+.descriptions-container {
+    min-width: 400px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* background: #fff; */
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    opacity: 1;
+    visibility: visible;
+    /* transition: opacity 0.5s ease, visibility 0.5s ease; */
+    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.service-card img {
+    border-radius: 20px;
+}
+
+.service-card h2 {
+    font-size: 39px;
+    font-weight: bold;
+}
+
+.service-card p {
+    text-align: justify;
+    color: var(--color-content);
+    font-family: "Montserrat", sans-serif;
+}
+
+.service-card a {
+    padding: 10px 20px;
+    background: var(--color-primary);
+    border-radius: 5px;
+    color: hsl(225deg, 46%, 95%);
+    transition: all .5s ease;
+}
+
+.service-card a:hover {
+    background: var(--color-secondary);
+}
+
+.service-card.oculto {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 50%;
+}
+
+/* Additional hover effect to hide icon-services */
+.services-content ul li:hover button:hover ~ .icon-services {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 50%;
+}

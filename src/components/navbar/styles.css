@@ -62,7 +62,7 @@
 }
 
 .burguer-btn svg {
-    position: absolute;
+    position: relative;
     right: 20px;
     top: 40px;
     color: var(--color-nav-links);
@@ -140,7 +140,7 @@
 .desktop-container {
     display: none;
     flex-grow: 1;
-    font-size: x-large;
+    font-size: 24px;
     position: relative;
 }
 
@@ -340,11 +340,11 @@ p {
     opacity: 1;
 }
 
-.nav-card-content .principal ol li button {
+.nav-card-content .principal ol li a {
     transition: all .5s ease;
 }
 
-.nav-card-content .principal ol li:hover button {
+.nav-card-content .principal ol li:hover a {
     font-size: xx-large;
     text-decoration: underline;
 }

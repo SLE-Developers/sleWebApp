@@ -10,7 +10,9 @@
 
 *{
   /* font-family: 'Poppins', sans-serif; */
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .invisible {
@@ -27,4 +29,8 @@ body {
 
 p {
   color: var(--color-primary);
+}
+
+::-webkit-scrollbar {
+  
 }

@@ -29,16 +29,19 @@
     padding: 5px;
     text-align: center;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .image-container {
     background: #f3f3f3;
     width: 100%;
     /* ajusta el ancho según sea necesario */
-    height: 400px;
+    height: 50%;
     /* ajusta la altura según sea necesario */
     overflow: hidden;
     position: relative;
+    border-radius: 5px;
 }
 
 .image-container h2 {

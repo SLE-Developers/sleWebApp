@@ -10,10 +10,25 @@ import { LogoLetras } from "@/components/svgs/LogoLetras";
 import { Logo } from "@/components/svgs/Logo";
 import { NavSlider } from "../sliders/navslider/NavSlider";
 
-export const NavBar = () => {
+interface NavBarProps {
+  setActiveService: (service: any) => void;
+  setAlreadySelected: (selected: boolean) => void;
+}
+
+export const NavBar: React.FC<NavBarProps> = ({ setActiveService, setAlreadySelected }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [activeLink, setActiveLink] = useState("");
   const [itemServices, setItemServices] = useState("");
+
+  const handlerServiceRedirection = (tittle: any) => {
+    setTimeout(() => {
+      setActiveService(tittle)
+      setAlreadySelected(true)
+      setTimeout(() => {
+        setAlreadySelected(false)
+      }, 1500)
+    }, 500)
+  }
 
   const toggleActive = () => {
     setToggleMenu(!toggleMenu);
@@ -117,7 +132,7 @@ export const NavBar = () => {
                   className={`link ${
                     activeLink == "services" && "active-link"
                   }`}
-                  onClick={() => toggleLink("services")}
+                  onClick={() => toggleLink(activeLink === "services" ? "" : "services")}
                 >
                   <p id="link1" className="link-text">
                     {glosary.navbar.services.link}
@@ -133,7 +148,7 @@ export const NavBar = () => {
                   className={`link ${
                     activeLink == "portfolio" && "active-link"
                   }`}
-                  onClick={() => toggleLink("portfolio")}
+                  onClick={() => toggleLink(activeLink === "portfolio" ? "" : "portfolio")}
                 >
                   <p id="link2" className="link-text">
                     {glosary.navbar.portfolio.link}
@@ -150,7 +165,7 @@ export const NavBar = () => {
                     className={`link ${
                       activeLink == "information" && "active-link"
                     }`}
-                    onClick={() => toggleLink("information")}
+                    onClick={() => toggleLink(activeLink === "information" ? "" : "information")}
                   >
                     <p id="link3" className="link-text">
                       {glosary.navbar.information.link}
@@ -185,45 +200,25 @@ export const NavBar = () => {
           <div className="nav-card-content">
             <div className="cta">
               <span>{glosary.navbar.services.slogan}</span>
-              <Link href={"/"}>
+              <Link href={"/#services-landing"}>
                 {glosary.navbar.services.cta}
                 <IoIosArrowForward />
               </Link>
             </div>
             <div className="principal">
               <ol>
-                <li>
-                  <button>
-                    <div className="icon-container">
-                      <span>{glosary.navbar.services.list.item1}</span>
-                      <IoIosArrowForward />
-                    </div>
-                  </button>
-                </li>
-                <li>
-                  <button>
-                    <div className="icon-container">
-                      <span>{glosary.navbar.services.list.item2}</span>
-                      <IoIosArrowForward />
-                    </div>
-                  </button>
-                </li>
-                <li>
-                  <button>
-                    <div className="icon-container">
-                      <span>{glosary.navbar.services.list.item3}</span>
-                      <IoIosArrowForward />
-                    </div>
-                  </button>
-                </li>
-                <li>
-                  <button>
-                    <div className="icon-container">
-                      <span>{glosary.navbar.services.list.item3}</span>
-                      <IoIosArrowForward />
-                    </div>
-                  </button>
-                </li>
+                {
+                  glosary.navbar.services.list.map((item: string, index: number) => (
+                    <li key={index + "servicesList"}>
+                      <Link href={"/#services-landing"} onClick={handlerServiceRedirection(item)}>
+                        <div className="icon-container">
+                          <span>{item}</span>
+                          <IoIosArrowForward />
+                        </div>
+                      </Link>
+                    </li>
+                  ))
+                }
               </ol>
             </div>
             <div className="principal">

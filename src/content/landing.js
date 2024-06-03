@@ -4,12 +4,12 @@ export const espLanding = {
             link: 'servicios',
             slogan: 'somos expertos en lo que hacemos',
             cta: 'ver todos los servicios',
-            list: {
-                item1: 'desarrollo web',
-                item2: 'tiendas ecommerce',
-                item3: 'aplicaciones',
-                item4: 'diseño UX/UI',
-            },
+            list: [
+                'desarrollo web',
+                'tiendas ecommerce',
+                'aplicaciones',
+                'diseño UX/UI',
+            ],
         },
         portfolio: {
             link: 'portafolio',
@@ -60,7 +60,7 @@ export const espLanding = {
                 },
                 {
                     name: 'ejemplo',
-                    category: 'desarrollo web',
+                    category: 'tiendas ecommerce',
                     description: 'descripcion generica',
                     img1: '',
                     img2: '',
@@ -118,23 +118,27 @@ export const espLanding = {
         subtittle: 'nosotros te ofrecemos',
         services: [
             {
+                image:'/desarrollo-web.jpg',
                 tittle: 'desarrollo web',
-                text: 'lorem ipsum dolor',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit hic nemo nesciunt sunt ipsam fugiat aut rerum cumque ad, amet quas, quis voluptatem dolorem autem atque ut assumenda nobis odit?',
                 cta: 'más información',
             },
             {
+                image:'/e-commerce.jpg',
                 tittle: 'tiendas online',
-                text: 'lorem ipsum dolor',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit hic nemo nesciunt sunt ipsam fugiat aut rerum cumque ad, amet quas, quis voluptatem',
                 cta: 'más información',
             },
             {
-                tittle: 'aplicaciones',
-                text: 'lorem ipsum dolor',
+                image:'/apps.jpg',
+                tittle: 'desarrollo movil',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit hic nemo nesciunt sunt ipsam fugiat aut rerum cumque ad, amet quas, quis voluptatem dolorem autem atque ut assumenda nobis odit?',
                 cta: 'más información',
             },
             {
+                image:'/diseño.jpg',
                 tittle: 'diseño UX/UI',
-                text: 'lorem ipsum dolor',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit hic nemo nesciunt sunt ipsam fugiat',
                 cta: 'más información',
             },
         ],

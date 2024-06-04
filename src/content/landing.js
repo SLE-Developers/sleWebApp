@@ -157,15 +157,15 @@ export const espLanding = {
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'tiendas ecommerce',
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'desarrollo movil',
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'diseño UX/UI',
                         link: '/'
                     },
                 ]
@@ -174,19 +174,31 @@ export const espLanding = {
                 tittle: 'manejamos',
                 items: [
                     {
-                        text: 'desarrollo web',
+                        text: 'Wordpress',
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'CSS',
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'HTML',
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'JavaScript',
+                        link: '/'
+                    },
+                    {
+                        text: 'DataBase',
+                        link: '/'
+                    },
+                    {
+                        text: 'Python',
+                        link: '/'
+                    },
+                    {
+                        text: 'C++',
                         link: '/'
                     },
                 ]
@@ -195,19 +207,19 @@ export const espLanding = {
                 tittle: 'politicas',
                 items: [
                     {
-                        text: 'desarrollo web',
+                        text: 'política de privacidad',
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'política de tratamiento de datos',
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'políticas de cookies',
                         link: '/'
                     },
                     {
-                        text: 'desarrollo web',
+                        text: 'términos & condiciones',
                         link: '/'
                     },
                 ]
@@ -217,11 +229,11 @@ export const espLanding = {
         placeholder: 'correo electrónico',
         submit: 'enviar',
         media: {
-            fb: '#',
-            ig: '#',
-            x: '#',
-            git: '#',
-            yt: '#',
+            fb: '/',
+            ig: '/',
+            x: '/',
+            git: '/',
+            yt: '/',
         }
     },
 }

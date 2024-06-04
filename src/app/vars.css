@@ -4,7 +4,8 @@
 
 :root {
     --color-background: hsl(225deg, 40%, 98%);
-    --color-nav-links: hsl(222deg, 98%, 42%);
+    /* --color-nav-links: hsl(222deg, 98%, 42%); */
+    --color-nav-links: hsl(225deg, 46%, 95%);
     --color-desplegable: hsl(213deg, 79%, 85%);
     --color-content: hsl(225deg, 46%, 5%);
     --color-primary: hsl(222deg, 98%, 42%);

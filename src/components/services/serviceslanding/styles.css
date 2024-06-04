@@ -9,6 +9,8 @@
     align-items: center;
     color: var(--color-content);
     text-transform: capitalize;
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
 .services-content {

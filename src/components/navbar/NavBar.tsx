@@ -9,25 +9,27 @@ import { IoIosArrowForward } from "react-icons/io";
 import { LogoLetras } from "@/components/svgs/LogoLetras";
 import { Logo } from "@/components/svgs/Logo";
 import { NavSlider } from "../sliders/navslider/NavSlider";
+import { useStore } from "@/store/store";
 
-interface NavBarProps {
-  setActiveService: (service: any) => void;
-  setAlreadySelected: (selected: boolean) => void;
-}
+export const NavBar = () => {
 
-export const NavBar: React.FC<NavBarProps> = ({ setActiveService, setAlreadySelected }) => {
+  const { setActiveService, setAlreadySelected } = useStore();
+
   const [toggleMenu, setToggleMenu] = useState(false);
   const [activeLink, setActiveLink] = useState("");
   const [itemServices, setItemServices] = useState("");
 
   const handlerServiceRedirection = (tittle: any) => {
+    setActiveService(tittle)
+    setAlreadySelected(true)
+    setActiveLink("");
     setTimeout(() => {
       setActiveService(tittle)
       setAlreadySelected(true)
       setTimeout(() => {
         setAlreadySelected(false)
       }, 1500)
-    }, 500)
+    }, 1500)
   }
 
   const toggleActive = () => {
@@ -210,7 +212,7 @@ export const NavBar: React.FC<NavBarProps> = ({ setActiveService, setAlreadySele
                 {
                   glosary.navbar.services.list.map((item: string, index: number) => (
                     <li key={index + "servicesList"}>
-                      <Link href={"/#services-landing"} onClick={handlerServiceRedirection(item)}>
+                      <Link href={"/#services-landing"} onClick={() => handlerServiceRedirection(item)}>
                         <div className="icon-container">
                           <span>{item}</span>
                           <IoIosArrowForward />

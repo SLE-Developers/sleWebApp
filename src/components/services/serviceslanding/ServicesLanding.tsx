@@ -2,27 +2,44 @@
 import { espLanding as glosary } from "../../../content/landing";
 import { LogoServices } from "@/components/svgs/LogoServices";
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useStore } from "@/store/store";
 
-interface ServicesLandingProps {
-  handlerLeave: () => void;
-  handlerHide: (title: any) => void;
-  handlerActive: (title: any) => void;
-  setHideIcon: (title: any) => void;
-  hideIcon: string;
-  activeService: string;
-}
+export const ServicesLanding = () => {
+  const { setAlreadySelected, hideIcon, activeService, setHideIcon, setActiveService } = useStore();
+  const alreadySelected = useStore((state) => state.alreadySelected);
 
-export const ServicesLanding: React.FC<ServicesLandingProps> = ({
-  handlerLeave,
-  handlerHide,
-  handlerActive,
-  setHideIcon,
-  hideIcon,
-  activeService
-}) => {
+  const handlerHide = (tittle: string) => {
+    if (!alreadySelected) {
+      setHideIcon(tittle);
+      setActiveService(tittle);
+    }
+  };
+
+  const handlerActive = (tittle: string) => {
+    setActiveService(tittle);
+    setAlreadySelected(true);
+    setTimeout(() => {
+      setAlreadySelected(false);
+    }, 1500);
+  };
+
+  const handlerLeave = () => {
+    if (!alreadySelected) {
+      setActiveService('');
+      setHideIcon('');
+    }
+  };
+
+  useEffect(() => {
+    console.log(activeService)
+  }, [activeService]);
+
+  useEffect(() => {
+    console.log(alreadySelected)
+  }, [alreadySelected])
 
   return (
     <div className="services-container" onMouseLeave={() => handlerLeave()} id="services-landing">

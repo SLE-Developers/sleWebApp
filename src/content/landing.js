@@ -7,7 +7,7 @@ export const espLanding = {
             list: [
                 'desarrollo web',
                 'tiendas ecommerce',
-                'aplicaciones',
+                'desarrollo movil',
                 'diseño UX/UI',
             ],
         },
@@ -125,7 +125,7 @@ export const espLanding = {
             },
             {
                 image:'/e-commerce.jpg',
-                tittle: 'tiendas online',
+                tittle: 'tiendas ecommerce',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit hic nemo nesciunt sunt ipsam fugiat aut rerum cumque ad, amet quas, quis voluptatem',
                 cta: 'más información',
             },
@@ -154,19 +154,19 @@ export const espLanding = {
                 items: [
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                 ]
             },
@@ -175,19 +175,19 @@ export const espLanding = {
                 items: [
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                 ]
             },
@@ -196,19 +196,19 @@ export const espLanding = {
                 items: [
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                     {
                         text: 'desarrollo web',
-                        link: '#'
+                        link: '/'
                     },
                 ]
             },
